@@ -10,3 +10,9 @@ const age = 19;
 
 const result = age > 19 ? '당신은 성인!' : '아직 미성년자!';
 console.log(result);
+
+
+const mathScore = 70;
+
+const className = (mathScore > 90) ? 'a반' : (mathScore > 80) ? 'b반' : 'c반';
+console.log(className);

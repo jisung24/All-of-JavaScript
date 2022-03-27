@@ -103,3 +103,44 @@ for(let value of arr3){
     }
 }
 console.log(min,max);
+
+
+//for in, for of, forEach 복습
+let num = [777,431,788,1011,999,929,101,425,623,727,943,1000];
+
+class Item{ //Item게시판 만들었다고 치자! 
+    constructor(title,content,price,tell){
+        this.title = title;
+        this.content = content;
+        this.price = price;
+        this.tell = tell;
+    }
+}
+let item1 = new Item('필통','필통입니다',3000,'x');
+// 프론트에서 객체를 쓸 일이 있나?
+// js는 브라우져상 모든 요소들을 객체로 만들어서 다룬다.
+// html요소를 하나 가져오면 그것도 객체로 다룬다.
+// 따라서 객체는 진짜 중요함. 
+for(let key in item1){
+    console.log(`키 : ${key}, 값 : ${item1[key]}`);
+}
+
+
+num.forEach((value,index)=>{ //값과 index를 동시에 다루고싶으면 forEach, for-in
+    //forEach함수는 각각의 value와 index에 대햐여 콜백함수를 실행해준다!
+    if(value > 300){
+        console.log(`값 >> ${value}`);
+        console.log(`index >> ${index}`);
+        console.log('=================');
+    }else{
+        console.log('300 안 넘어!');
+    }
+})
+
+for(let idx in num){
+    if(num[idx] === 999){
+        console.log(`${Number(idx) + 1}번째에 999들어있음~`);
+    }else{
+        continue;
+    }
+}
